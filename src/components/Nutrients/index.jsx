@@ -1,22 +1,34 @@
-import Nutrient from "../Nutrient";
-
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import Nutrient from "../Nutrient";
+
+//Css for the component with styled-component
 const Container = styled.div`
   grid-area: 1 / 4 / 3 / 5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
+//End Css
 
-function Nutrients(props) {
+/**
+ * Render a list of Nutrient component
+ * @namespace Nutrients
+ * @param { object } keyData
+ */
+function Nutrients({ keyData }) {
   return (
     <Container>
-      {Object.entries(props.keyData).map(([k, v]) => {
+      {Object.entries(keyData).map(([k, v]) => {
         return <Nutrient key={k} keyDataName={k} count={v} />;
       })}
     </Container>
   );
 }
+
+Nutrients.propTypes = {
+  keyData: PropTypes.object,
+};
 
 export default Nutrients;

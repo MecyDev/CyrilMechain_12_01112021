@@ -1,18 +1,23 @@
 import PropTypes from "prop-types";
-
 import { Cell, Pie, PieChart, ResponsiveContainer, Label } from "recharts";
-
 import styled from "styled-components";
 
 import CustomRadialLabel from "../CustomRechart/CustomRadialLabel";
 
+//Css for the component with styled-component
 const MyResponsiveContainer = styled(ResponsiveContainer)`
   grid-area: 2 / 3 / 3 / 4;
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
 `;
+//End Css
 
+/**
+ * Render a Radialchart component
+ * @namespace Radialchart
+ * @param { array } score
+ */
 function Radialchart({ score }) {
   return (
     <MyResponsiveContainer width="100%" height="100%">

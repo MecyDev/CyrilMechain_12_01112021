@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useContext } from "react";
 import { UserInfosContext } from "../../../utils/context";
 import { useFetchUserAverageSessions } from "../../../utils/hooks";
@@ -11,10 +10,11 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-
 import styled from "styled-components";
+
 import CustomLineTooltip from "../CustomRechart/CustomLineTooltip";
 
+//Css for the component with styled-component
 const MyResponsiveContainer = styled(ResponsiveContainer)`
   grid-area: 2 / 1 / 3 / 2;
   background: #ff0000;
@@ -40,17 +40,48 @@ const MyH2 = styled.h1`
   mix-blend-mode: normal;
   opacity: 0.5;
 `;
+//End Css
 
+/**
+ * Render a Linechart component
+ * @namespace Linechart
+ */
 function Linearchart() {
-  const { userId } = useContext(UserInfosContext);
+  const {
+    /** The id of the user store in context
+     * @memberof Linechart
+     * @type { integer }
+     */ userId,
+  } = useContext(UserInfosContext);
 
-  const { isLoading, isError, data, error } =
-    useFetchUserAverageSessions(userId);
+  const {
+    /**
+     * @memberof Linechart
+     * @type { boolean }
+     */ isLoading,
+    /**
+     * @memberof Linechart
+     * @type { integer }
+     */
+    isError,
+    /**
+     * @memberof Linechart
+     * @type { object }
+     */
+    data,
+    /**
+     * @memberof Linechart
+     * @type { object }
+     */
+    error,
+  } = useFetchUserAverageSessions(userId);
 
+  //Show when data are loading
   if (isLoading) {
     return <span>Loading...</span>;
   }
 
+  //Show if fail retrive data
   if (isError) {
     return <span>Error: {error.message}</span>;
   }

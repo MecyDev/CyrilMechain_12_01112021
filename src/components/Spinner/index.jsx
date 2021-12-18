@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
+//Css for the component with styled-component
 const rotate = keyframes`
   to {
     transform: rotate(360deg);
@@ -24,10 +25,15 @@ const SpinDiv = styled.div`
   border-top-color: red;
   animation: ${rotate} 1s ease-in-out infinite;
 `;
+//End Css
 
+/**
+ * Render a spinner component for loading
+ * @namespace Spinner
+ */
 function Spinner() {
   return (
-    <MyDiv id="loading">
+    <MyDiv>
       <SpinDiv />
     </MyDiv>
   );

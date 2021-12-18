@@ -6,6 +6,7 @@ import swim from "../../assets/swim.svg";
 import bike from "../../assets/bike.svg";
 import alter from "../../assets/alter.svg";
 
+//Css for the component with styled-component
 const Aside = styled.aside`
   grid-area: aside;
   height: calc(100vh - 91px);
@@ -47,7 +48,12 @@ const CopyRight = styled.p`
   transform: rotate(-90deg);
   margin-top: 164px;
 `;
+//End Css
 
+/**
+ * Render a vertical navbar component
+ * @namespace NavVerti
+ */
 function NavVerti() {
   return (
     <Aside>

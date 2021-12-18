@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const TitleTspan = styled.tspan`
   font-style: normal;
   font-weight: 500;
@@ -26,7 +28,16 @@ const ValueTspan = styled.tspan`
   text-align: center;
   fill: #6e6e6e;
 `;
+//End Css
 
+/**
+ * Render a Custom Label for Radialchart component
+ * @namespace CustumRadialLabel
+ * @param { object } viewBox
+ * @param { string } value1
+ * @param { string } value2
+ * @param { string } value3
+ */
 function CustomRadialLabel({ viewBox, value1, value2, value3 }) {
   const { cx, cy } = viewBox;
   return (
@@ -46,5 +57,12 @@ function CustomRadialLabel({ viewBox, value1, value2, value3 }) {
     </React.Fragment>
   );
 }
+
+CustomRadialLabel.propTypes = {
+  viewBox: PropTypes.object,
+  value1: PropTypes.string,
+  value2: PropTypes.string,
+  value3: PropTypes.string,
+};
 
 export default CustomRadialLabel;

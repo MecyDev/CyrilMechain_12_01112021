@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const MyNav = styled.div`
   width: 100%;
   height: 100%;
@@ -17,7 +18,12 @@ const MyLink = styled(Link)`
   color: #000000;
   font-size: 28px;
 `;
+//End Css
 
+/**
+ * Render Home component
+ * @namespace Home
+ */
 function Home() {
   return (
     <MyNav>

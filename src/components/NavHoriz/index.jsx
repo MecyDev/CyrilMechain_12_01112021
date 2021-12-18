@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const Navigation = styled.nav`
   width: 69%;
   display: flex;
@@ -16,7 +17,12 @@ const StyledLink = styled(Link)`
   line-height: 2.4rem;
   text-decoration: none;
 `;
+//End Css
 
+/**
+ * Render a horizontal navbar component
+ * @namespace NavHoriz
+ */
 function NavHoriz() {
   return (
     <Navigation role="main">

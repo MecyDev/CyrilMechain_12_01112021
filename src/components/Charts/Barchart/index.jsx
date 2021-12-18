@@ -1,6 +1,4 @@
 import { useContext } from "react";
-import { UserInfosContext } from "../../../utils/context";
-import { useFetchUserActivity } from "../../../utils/hooks";
 import {
   ResponsiveContainer,
   BarChart,
@@ -10,14 +8,16 @@ import {
   Tooltip,
   Bar,
 } from "recharts";
-
-import CustomBarTooltip from "../CustomRechart/CustomBarTooltip";
-
 import styled from "styled-components";
+
+import { UserInfosContext } from "../../../utils/context";
+import { useFetchUserActivity } from "../../../utils/hooks";
+import CustomBarTooltip from "../CustomRechart/CustomBarTooltip";
 
 import blkPoint from "../../../assets/blk_point.png";
 import redPoint from "../../../assets/red_point.png";
 
+//Css for the component with styled-component
 const MyDiv = styled.div`
   height: 320px;
   position: relative;
@@ -59,16 +59,48 @@ const MyImg = styled.img`
   margin-right: 10px;
   margin-left: 32px;
 `;
+//End Css
 
+/**
+ * Render a Barchart component
+ * @namespace Barchart
+ */
 function Barchart() {
-  const { userId } = useContext(UserInfosContext);
+  const {
+    /** The id of the user store in context
+     * @memberof Barchart
+     * @type { integer }
+     */ userId,
+  } = useContext(UserInfosContext);
 
-  const { isLoading, isError, data, error } = useFetchUserActivity(userId);
+  const {
+    /**
+     * @memberof Barchart
+     * @type { boolean }
+     */ isLoading,
+    /**
+     * @memberof Barchart
+     * @type { integer }
+     */
+    isError,
+    /**
+     * @memberof Barchart
+     * @type { object }
+     */
+    data,
+    /**
+     * @memberof Barchart
+     * @type { object }
+     */
+    error,
+  } = useFetchUserActivity(userId);
 
+  //Show when data are loading
   if (isLoading) {
     return <span>Loading...</span>;
   }
 
+  //Show if fail retrive data
   if (isError) {
     return <span>Error: {error.message}</span>;
   }

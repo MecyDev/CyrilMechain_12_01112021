@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const Infos = styled.div`
   width: 100%;
 `;
@@ -21,7 +22,13 @@ const Message = styled.p`
   line-height: 2.4rem;
   color: #000000;
 `;
+//End Css
 
+/**
+ * Render a welcome message component
+ * @namespace Welcome
+ * @param { string } user
+ */
 function Welcome({ user }) {
   return (
     <Infos>

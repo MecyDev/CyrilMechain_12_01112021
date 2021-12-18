@@ -1,11 +1,16 @@
 /**
  * This file uses the Axios library to make all API calls.
  */
+import axios from "axios";
 
 import userDataFormat from "./formatUserDataFetch";
 
-import axios from "axios";
-
+/**
+ * The config object for axios calls
+ * @param { string } baseURL The URL of the API
+ * @param { object } headers
+ * @return { Object }
+ */
 const apiClient = axios.create({
   baseURL: "http://localhost:3001",
   headers: {
@@ -62,6 +67,10 @@ const getUserPerformance = async (id) => {
   return formatResponse;
 };
 
+/**
+ * Contain all datas return by the functions
+ * @type { object }
+ */
 const UserDataService = {
   getUserInfos,
   getUserActivity,

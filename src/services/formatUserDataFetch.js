@@ -1,7 +1,12 @@
 /**
- * Format user datas activity for Barchat component
+ * Format user datas activity for charts component
  */
 
+/**
+ * Genrate a array of object with the correct format for the Radialchart component
+ * @param { number } score The URL of the API
+ * @return { array }
+ */
 const formatUserScore = (score) => {
   const array = [
     { name: "do", value: score, color: "#e60000" },
@@ -14,6 +19,12 @@ const formatUserScore = (score) => {
   return array;
 };
 
+/**
+ * Im here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * Genrate a array of object with the correct format for the Radialchart component
+ * @param { number } score The URL of the API
+ * @return { array }
+ */
 const formatUserActivity = (data) => {
   const array = [];
 

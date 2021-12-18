@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const MyDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +16,12 @@ const MyH1 = styled.h1`
   line-height: 24px;
   color: #000000;
 `;
+//End Css
 
+/**
+ * Render 404 page component
+ * @namespace Page404
+ */
 function Page404() {
   return (
     <MyDiv>

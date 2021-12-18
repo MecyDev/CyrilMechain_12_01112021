@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const MyDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +19,14 @@ const MyP = styled.p`
   color: #ffffff;
   margin-top: 4px;
 `;
+//End Css
 
+/**
+ * Render a Custom Tooltip for BarChart component
+ * @namespace CustumBarTooltip
+ * @param { boolean } active
+ * @param { array } payload
+ */
 function CustomBarTooltip({ active, payload }) {
   if (active && payload) {
     return (
@@ -30,5 +39,10 @@ function CustomBarTooltip({ active, payload }) {
 
   return null;
 }
+
+CustomBarTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+};
 
 export default CustomBarTooltip;

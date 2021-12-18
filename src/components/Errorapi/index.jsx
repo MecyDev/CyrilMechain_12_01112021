@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
+//Css for the component with styled-component
 const MyDiv = styled.div`
   width: 100%;
   height: 100%;
@@ -15,13 +17,23 @@ const MySpan = styled.span`
   line-height: 24px;
   color: #000000;
 `;
+//End Css
 
-function Errorapi(props) {
+/**
+ * Render a Error message component
+ * @namespace Errorapi
+ * @param { string } message
+ */
+function Errorapi({ message }) {
   return (
     <MyDiv>
-      <MySpan>{props.message}</MySpan>
+      <MySpan>{message}</MySpan>
     </MyDiv>
   );
 }
+
+Errorapi.propTypes = {
+  message: PropTypes.string,
+};
 
 export default Errorapi;

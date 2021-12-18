@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NavHoriz from "../NavHoriz";
 import logo from "../../assets/logo.svg";
 
+//Css for the component with styled-component
 const Heading = styled.header`
   grid-area: header;
   width: 100%;
@@ -17,7 +18,12 @@ const Heading = styled.header`
 const HeadImg = styled.img`
   margin-left: 29px;
 `;
+//End Css
 
+/**
+ * Render a Header component
+ * @namespace Header
+ */
 function Header() {
   return (
     <Heading>

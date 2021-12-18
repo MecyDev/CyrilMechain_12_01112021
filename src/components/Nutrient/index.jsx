@@ -6,6 +6,7 @@ import protein from "../../assets/protein.png";
 import glucide from "../../assets/glucide.png";
 import lipide from "../../assets/lipide.png";
 
+//Css for the component with styled-component
 const DivContainer = styled.div`
   display: flex;
   align-items: center;
@@ -50,12 +51,20 @@ const P = styled.p`
   line-height: 2%.4rem;
   color: #74798c;
 `;
+//End Css
 
+/**
+ * Render a Nutrient single block component
+ * @namespace Nutrient
+ * @param { string } keyDataName
+ * @param { integer } count
+ */
 function Nutrient({ keyDataName, count }) {
   let color = "#fbeced";
   let icon = calorie;
   let keyName = "Calories";
 
+  //For adapt the style of the block
   if (keyDataName === "proteinCount") {
     color = "#e6f5fc";
     icon = protein;

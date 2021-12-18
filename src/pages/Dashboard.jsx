@@ -1,10 +1,9 @@
-import { useFetchUserInfos } from "../utils/hooks";
-import userDataFormat from "../services/formatUserDataFetch";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
-
 import styled from "styled-components";
 
+import { useFetchUserInfos } from "../utils/hooks";
+import userDataFormat from "../services/formatUserDataFetch";
 import Welcome from "../components/Welcome";
 import Barchart from "../components/Charts/Barchart";
 import Linearchart from "../components/Charts/Linearchart";
@@ -13,9 +12,9 @@ import Radialchart from "../components/Charts/Radialchart";
 import Nutrients from "../components/Nutrients";
 import Spinner from "../components/Spinner";
 import Errorapi from "../components/Errorapi";
-
 import { UserInfosContext } from "../utils/context";
 
+//Css for the component with styled-component
 const Container = styled.div`
   grid-area: main;
   display: flex;
@@ -36,27 +35,54 @@ const Graphs = styled.div`
   grid-row-gap: 28px;
   margin-top: 77px;
 `;
+//End Css
 
+/**
+ * Render DashBoard component
+ * @namespace Dashboard
+ */
 function Dashboard() {
   const params = useParams();
 
-  const { saveId } = useContext(UserInfosContext);
+  const {
+    /** The id of the user store in context
+     * @memberof Dashboard
+     * @type { integer }
+     */ saveId,
+  } = useContext(UserInfosContext);
 
   useEffect(() => {
     saveId(params.id);
   }, [params.id, saveId]);
 
   const {
-    isLoading,
+    /**
+     * @memberof Dashboard
+     * @type { boolean }
+     */ isLoading,
+    /**
+     * @memberof Dashboard
+     * @type { integer }
+     */
     isError,
+    /**
+     * @memberof Dashboard
+     * @type { object }
+     */
     data: user,
+    /**
+     * @memberof Dashboard
+     * @type { object }
+     */
     error,
   } = useFetchUserInfos(params.id);
 
+  //Show when data are loading
   if (isLoading) {
     return <Spinner />;
   }
 
+  //Show if fail retrive data
   if (isError) {
     return <Errorapi message={error.message} />;
   }
