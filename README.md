@@ -16,6 +16,7 @@ This project is developed with:
 
 - [React with C.R.A](https://pt-br.reactjs.org/)
 - [Styled-components](https://styled-components.com/)
+- [Axios](https://axios-http.com/)
 - [Recharts](https://recharts.org/en-US/)
 - [Jsdoc](https://jsdoc.app/)
 - [React-query](https://react-query.tanstack.com/)
