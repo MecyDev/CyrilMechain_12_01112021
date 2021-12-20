@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Oc_projet_12" />
+  <img src="https://user-images.githubusercontent.com/29403923/146696804-31200d85-7221-45f8-94aa-777b05a47eb6.png" alt="Oc_projet_12" />
 
 &#xa0;
 
