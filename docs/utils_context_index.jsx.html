@@ -31,7 +31,7 @@
 
 
     <title>
-      Nutrients
+      utils/context/index.jsx
     </title>
 
     <!--[if lt IE 9]>
@@ -98,7 +98,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        Nutrients
+        utils/context/index.jsx
       </h1>
       
 
@@ -106,105 +106,32 @@
 
 
 
-
-<section>
-
-
-<header>
     
-        
-        <h2>
-        
-        Nutrients
-        
-        </h2>
-        
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { createContext } from "react";
+import { useState } from "react";
 
+/** @type { object } */
+export const UserInfosContext = createContext();
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>Render a list of Nutrient component</p></div>
-        
+/** @type { object } */
+export const UserInfosProvider = ({ children }) => {
+  const [userId, setUserId] = useState(0);
+  /** @type { integer } */
+  const saveId = (id) => {
+    setUserId(id);
+  };
 
-        
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="components_Nutrients_index.jsx.html">components/Nutrients/index.jsx</a>, <a href="components_Nutrients_index.jsx.html#line20">line 20</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+  return (
+    &lt;UserInfosContext.Provider value={{ userId, saveId }}>
+      {children}
+    &lt;/UserInfosContext.Provider>
+  );
+};
+</code></pre>
+        </article>
+    </section>
 
 
 

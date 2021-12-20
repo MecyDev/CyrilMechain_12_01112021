@@ -4,6 +4,9 @@ import styled from "styled-components";
 //Css for the component with styled-component
 const Infos = styled.div`
   width: 100%;
+  @media (max-width: 1024px) {
+    margin-top: 25px;
+  }
 `;
 
 const HOne = styled.h1`

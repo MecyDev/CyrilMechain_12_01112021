@@ -31,7 +31,7 @@
 
 
     <title>
-      Nutrients
+      index.jsx
     </title>
 
     <!--[if lt IE 9]>
@@ -98,7 +98,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        Nutrients
+        index.jsx
       </h1>
       
 
@@ -106,105 +106,33 @@
 
 
 
-
-<section>
-
-
-<header>
     
-        
-        <h2>
-        
-        Nutrients
-        
-        </h2>
-        
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+import App from "./app";
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>Render a list of Nutrient component</p></div>
-        
+/** @type { object } */
+const queryClient = new QueryClient();
 
-        
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="components_Nutrients_index.jsx.html">components/Nutrients/index.jsx</a>, <a href="components_Nutrients_index.jsx.html#line20">line 20</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+//Render the entire application
+ReactDOM.render(
+  &lt;React.StrictMode>
+    &lt;QueryClientProvider client={queryClient}>
+      &lt;Router>
+        &lt;App />
+      &lt;/Router>
+    &lt;/QueryClientProvider>
+  &lt;/React.StrictMode>,
+  document.getElementById("root")
+);
+</code></pre>
+        </article>
+    </section>
 
 
 

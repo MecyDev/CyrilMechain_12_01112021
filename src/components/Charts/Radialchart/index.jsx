@@ -10,6 +10,9 @@ const MyResponsiveContainer = styled(ResponsiveContainer)`
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
+  @media (max-width: 1024px) {
+    grid-area: 3 / 5 / 4 / 7;
+  }
 `;
 //End Css
 

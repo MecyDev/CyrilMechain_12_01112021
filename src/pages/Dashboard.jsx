@@ -25,6 +25,11 @@ const Container = styled.div`
 const Main = styled.main`
   width: 1126px;
   height: 779px;
+  @media (max-width: 1024px) {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+  }
 `;
 
 const Graphs = styled.div`
@@ -34,6 +39,11 @@ const Graphs = styled.div`
   grid-column-gap: 30px;
   grid-row-gap: 28px;
   margin-top: 77px;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 120px 320px 263px;
+    margin-top: 0;
+  }
 `;
 //End Css
 

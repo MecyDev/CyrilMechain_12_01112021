@@ -31,7 +31,7 @@
 
 
     <title>
-      Nutrients
+      utils/hooks/index.jsx
     </title>
 
     <!--[if lt IE 9]>
@@ -98,7 +98,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        Nutrients
+        utils/hooks/index.jsx
       </h1>
       
 
@@ -106,105 +106,58 @@
 
 
 
-
-<section>
-
-
-<header>
     
-        
-        <h2>
-        
-        Nutrients
-        
-        </h2>
-        
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useQuery } from "react-query";
+import UserDataService from "../../services/userDataFetch";
 
+/**
+ * Get the user informaton
+ * @param { integer } id Id of the user
+ * @return { object }
+ */
+export const useFetchUserInfos = (id) => {
+  return useQuery(["userInfos", { id }], () =>
+    UserDataService.getUserInfos(id)
+  );
+};
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>Render a list of Nutrient component</p></div>
-        
+/**
+ * Get the user activity
+ * @param { integer } id Id of the user
+ * @return { object }
+ */
+export const useFetchUserActivity = (id) => {
+  return useQuery(["userActivity", { id }], () =>
+    UserDataService.getUserActivity(id)
+  );
+};
 
-        
+/**
+ * Get the user average sessions
+ * @param { integer } id Id of the user
+ * @return { object }
+ */
+export const useFetchUserAverageSessions = (id) => {
+  return useQuery(["userAverageSessions", { id }], () =>
+    UserDataService.getUserAverageSessions(id)
+  );
+};
 
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="components_Nutrients_index.jsx.html">components/Nutrients/index.jsx</a>, <a href="components_Nutrients_index.jsx.html#line20">line 20</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+/**
+ * Get the user performance
+ * @param { integer } id Id of the user
+ * @return { object }
+ */
+export const useFetchUserPerformance = (id) => {
+  return useQuery(["userPerformance", { id }], () =>
+    UserDataService.getUserPerformance(id)
+  );
+};
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -11,6 +11,7 @@ import { UserInfosProvider } from "./utils/context";
 import "./styles/minireset.min.css";
 import "./styles/base.css";
 
+//Css for the component with styled-component
 const MainDiv = styled.div`
   display: grid;
   grid-template-columns: 117px 1fr;
@@ -21,7 +22,12 @@ const MainDiv = styled.div`
     "header  header"
     "aside   main";
 `;
+//End Css
 
+/**
+ * Render a App component
+ * @namespace App
+ */
 function App() {
   const routes = useRoutes([
     { path: "/", element: <Home /> },

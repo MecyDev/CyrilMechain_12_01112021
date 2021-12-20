@@ -25,6 +25,9 @@ const MyDiv = styled.div`
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
+  @media (max-width: 1024px) {
+    grid-area: 2 / 1 / 3 / 7;
+  }
 `;
 
 const Container = styled.div`

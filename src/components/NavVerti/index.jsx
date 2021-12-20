@@ -15,6 +15,9 @@ const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 1024px) {
+    height: 873px;
+  }
 `;
 
 const Navigation = styled.nav`

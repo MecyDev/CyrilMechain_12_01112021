@@ -3,8 +3,8 @@
  */
 
 /**
- * Genrate a array of object with the correct format for the Radialchart component
- * @param { number } score The URL of the API
+ * Generate a array with the correct data format for the Radialchart component
+ * @param { number } score
  * @return { array }
  */
 const formatUserScore = (score) => {
@@ -20,14 +20,16 @@ const formatUserScore = (score) => {
 };
 
 /**
- * Im here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- * Genrate a array of object with the correct format for the Radialchart component
- * @param { number } score The URL of the API
+ *
+ * Generate a array with the correct data format for the Barchart component
+ * @param { object } data
  * @return { array }
  */
 const formatUserActivity = (data) => {
+  /** @type { array } */
   const array = [];
 
+  /** @type { object } */
   const dataMinMax = {
     maxKg: Math.max(...data.map((e) => e.kilogram)),
     minKg: Math.min(...data.map((e) => e.kilogram)),
@@ -37,6 +39,7 @@ const formatUserActivity = (data) => {
 
   array.push(
     data.map((e) => {
+      /** @type { object } */
       const day = parseInt(e.day.slice(8));
       return {
         day: day,
@@ -45,22 +48,36 @@ const formatUserActivity = (data) => {
       };
     })
   );
-
   array.push(dataMinMax);
   return array;
 };
 
+/**
+ * Generate a array with the correct data format for the Linechart component
+ * @param { object } data
+ * @return { array }
+ */
 const formatUserAverageSessions = (data) => {
+  /** @type { array } */
   const day = ["L", "M", "M", "J", "V", "S", "D"];
+  /** @type { array } */
   const array = data.map((e, i) => {
     return { day: day[e.day - 1], sessionLength: e.sessionLength };
   });
   return array;
 };
 
+/**
+ * Generate a array with the correct data format for the Linechart component
+ * @param { object } data
+ * @return { array }
+ */
 const formatUserPerformance = (data) => {
+  /** @type { array } */
   const getData = data.data;
+  /** @type { object } */
   const getKind = data.kind;
+  /** @type { array } */
   const formatData = [];
 
   getData.map((e, i) => {
@@ -72,6 +89,7 @@ const formatUserPerformance = (data) => {
   return formatData;
 };
 
+/** @type { object } */
 const userDataFormat = {
   formatUserScore,
   formatUserActivity,

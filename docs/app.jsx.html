@@ -31,7 +31,7 @@
 
 
     <title>
-      Nutrients
+      app.jsx
     </title>
 
     <!--[if lt IE 9]>
@@ -98,7 +98,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        Nutrients
+        app.jsx
       </h1>
       
 
@@ -106,105 +106,73 @@
 
 
 
-
-<section>
-
-
-<header>
     
-        
-        <h2>
-        
-        Nutrients
-        
-        </h2>
-        
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import styled from "styled-components";
+import { useRoutes } from "react-router-dom";
 
+import Header from "./components/Header";
+import NavVerti from "./components/NavVerti";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Page404 from "./pages/Page404";
+import { UserInfosProvider } from "./utils/context";
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>Render a list of Nutrient component</p></div>
-        
+import "./styles/minireset.min.css";
+import "./styles/base.css";
 
-        
+//Css for the component with styled-component
+const MainDiv = styled.div`
+  display: grid;
+  grid-template-columns: 117px 1fr;
+  grid-template-rows: 91px calc(100vh - 91px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    "header  header"
+    "aside   main";
+`;
+//End Css
 
+/**
+ * Render a App component
+ * @namespace App
+ */
+function App() {
+  const routes = useRoutes([
+    { path: "/", element: &lt;Home /> },
+    {
+      path: "user",
+      element: &lt;Page404 />,
+    },
+    {
+      path: "user/:id",
+      element: (
+        &lt;UserInfosProvider>
+          &lt;Dashboard />
+        &lt;/UserInfosProvider>
+      ),
+    },
+    {
+      path: "*",
+      element: &lt;Page404 />,
+    },
+  ]);
 
+  return (
+    &lt;MainDiv>
+      &lt;Header />
+      &lt;NavVerti />
+      {routes}
+    &lt;/MainDiv>
+  );
+}
 
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class="details-item-container">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source"><ul class="dummy"><li>
-                <a href="components_Nutrients_index.jsx.html">components/Nutrients/index.jsx</a>, <a href="components_Nutrients_index.jsx.html#line20">line 20</a>
-            </li></ul></dd>
-        </div>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+export default App;
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -16,7 +16,6 @@ import CustomLineTooltip from "../CustomRechart/CustomLineTooltip";
 
 //Css for the component with styled-component
 const MyResponsiveContainer = styled(ResponsiveContainer)`
-  grid-area: 2 / 1 / 3 / 2;
   background: #ff0000;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
@@ -24,6 +23,10 @@ const MyResponsiveContainer = styled(ResponsiveContainer)`
 
 const MyDiv = styled.div`
   position: relative;
+  grid-area: 2 / 1 / 3 / 2;
+  @media (max-width: 1024px) {
+    grid-area: 3 / 1 / 4 / 3;
+  }
 `;
 
 const MyH2 = styled.h1`

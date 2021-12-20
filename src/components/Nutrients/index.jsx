@@ -9,6 +9,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    grid-area: 1 / 1 / 2 / 7;
+    margin-top: 20px;
+  }
 `;
 //End Css
 
