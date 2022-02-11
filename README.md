@@ -30,13 +30,13 @@ This project is developed with:
 Clone the project
 
 ```bash
-  git clone https://github.com/MecyDev/CyrilMechain_12_01112021
+  git clone https://github.com/MecyDev/CyrilMechain_12_01112021 myDirectory
 ```
 
 Go to the project directory
 
 ```bash
-  cd CyrilMechain_12_01112021
+  cd myDirectory
 ```
 
 Install dependencies
