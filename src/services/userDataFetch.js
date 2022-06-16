@@ -5,6 +5,8 @@ import axios from "axios";
 
 import userDataFormat from "./formatUserDataFetch";
 
+const location = window.location.href;
+
 /**
  * The config object for axios calls
  * @param { string } baseURL The URL of the API
@@ -12,7 +14,7 @@ import userDataFormat from "./formatUserDataFetch";
  * @return { Object }
  */
 const apiClient = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: location + "/user",
   headers: {
     "content-type": "application/json",
   },
@@ -24,7 +26,7 @@ const apiClient = axios.create({
  * @return { Object }
  */
 const getUserInfos = async (id) => {
-  const response = await apiClient.get(`/user/${id}`);
+  const response = await apiClient.get(`/${id}.json`);
   return response.data;
 };
 
@@ -34,7 +36,7 @@ const getUserInfos = async (id) => {
  * @return { Object }
  */
 const getUserActivity = async (id) => {
-  const response = await apiClient.get(`user/${id}/activity`);
+  const response = await apiClient.get(`/${id}/activity.json`);
   const formatResponse = userDataFormat.formatUserActivity(
     response.data.data.sessions
   );
@@ -47,7 +49,7 @@ const getUserActivity = async (id) => {
  * @return { Object }
  */
 const getUserAverageSessions = async (id) => {
-  const response = await apiClient.get(`user/${id}/average-sessions`);
+  const response = await apiClient.get(`/${id}/average-sessions.json`);
   const formatResponse = userDataFormat.formatUserAverageSessions(
     response.data.data.sessions
   );
@@ -60,7 +62,7 @@ const getUserAverageSessions = async (id) => {
  * @return { Object }
  */
 const getUserPerformance = async (id) => {
-  const response = await apiClient.get(`user/${id}/performance`);
+  const response = await apiClient.get(`/${id}/performance.json`);
   const formatResponse = userDataFormat.formatUserPerformance(
     response.data.data
   );
